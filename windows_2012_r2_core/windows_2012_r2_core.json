@@ -32,7 +32,8 @@
             "execute_command": "{{.Vars}} cmd /c C:/Windows/Temp/script.bat",
             "scripts": [
                 "./../scripts/vm-guest-tools.bat",
-                "./../scripts/puppet-enterprise.bat",
+                "./../scripts/dotnet.bat",
+		"./../scripts/windows_resource_kit.bat",
                 "./../scripts/vagrant-ssh.bat"
             ]
         }, 
