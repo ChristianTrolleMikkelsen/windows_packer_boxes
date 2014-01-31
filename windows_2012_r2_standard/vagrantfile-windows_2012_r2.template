@@ -1,0 +1,31 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+    config.vm.define "vagrant-windows-2012-r2-std"
+    config.vm.box = "windows_2012_r2_std"
+    config.vm.hostname = "Win2012R2Std"
+
+    config.winrm.username = "vagrant"
+    config.winrm.password = "vagrant"
+    
+    config.vm.guest = :windows  
+    config.windows.halt_timeout = 15
+
+    # Bridge network
+    config.vm.network :public_network, :bridge => 'en0: Wi-Fi (AirPort)'
+
+    # Port forward WinRM and RDP
+    config.vm.network :forwarded_port, guest: 3389, host: 3389
+    config.vm.network :forwarded_port, guest: 5985, host: 5985
+
+    config.vm.provider :virtualbox do |v, override|
+	v.name = "Tentacle"
+        #v.gui = true
+        v.customize ["modifyvm", :id, "--memory", "2048"]
+        v.customize ["modifyvm", :id, "--cpus", "1"] 
+    end
+
+    config.vm.provision "shell", path: "./../../Repositories/windows_boxes/scripts/rename-machine.bat", args: "MyMachine"
+
+end
