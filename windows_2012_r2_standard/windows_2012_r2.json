@@ -5,7 +5,7 @@
             "iso_url": "./../../iso/en_windows_server_2012_r2_x64_dvd_2707946.iso",
             "iso_checksum_type": "sha1" ,
             "iso_checksum": "B6F063436056510357CB19CB77DB781ED9C11DF3",
-            "headless": false,
+            "headless": true,
             "boot_wait": "2m",
             "ssh_username": "vagrant",
             "ssh_password": "vagrant",
