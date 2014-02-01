@@ -1,5 +1,5 @@
 if not exist "C:\vagrant\rktools.exe" (
-  powershell -Command "(New-Object System.Net.WebClient).DownloadFile('http://download.microsoft.com/download/8/e/c/8ec3a7d8-05b4-440a-a71e-ca3ee25fe057/rktools.exe', 'C:\Windows\Temp')" <NUL
+  powershell -Command "(New-Object System.Net.WebClient).DownloadFile('http://download.microsoft.com/download/8/e/c/8ec3a7d8-05b4-440a-a71e-ca3ee25fe057/rktools.exe', 'C:\Windows\Temp\rktools.exe')" <NUL
 )
 
 C:\Windows\Temp\rktools.exe /T:C:\Windows\Temp /C
